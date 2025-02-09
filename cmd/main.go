@@ -1,10 +1,8 @@
 package main
 
 import (
-	"net/http"
-
 	"github.com/HeitorMC/pismo-backend/config"
-	"github.com/gin-gonic/gin"
+	"github.com/HeitorMC/pismo-backend/internal/router"
 )
 
 func main() {
@@ -17,11 +15,5 @@ func main() {
 		return
 	}
 
-	r := gin.Default()
-	r.GET("/ping", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{
-			"message": "pong",
-		})
-	})
-	r.Run()
+	router.Initialize()
 }
