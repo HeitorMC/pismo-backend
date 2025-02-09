@@ -9,7 +9,7 @@ import (
 
 type AccountRepository interface {
 	Create(account *models.Account) error
-	Find(account *models.Account, id string) error
+	FindByID(account *models.Account, id string) error
 }
 
 type accountRepository struct {
@@ -32,7 +32,7 @@ func (r *accountRepository) Create(account *models.Account) error {
 	return nil
 }
 
-func (r *accountRepository) Find(account *models.Account, id string) error {
+func (r *accountRepository) FindByID(account *models.Account, id string) error {
 	err := r.db.First(account, id).Error
 	if err != nil {
 		return err

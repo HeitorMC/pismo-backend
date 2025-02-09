@@ -12,7 +12,7 @@ func FindAccount(account *models.Account, id string) error {
 
 	accountRepository := repository.NewAccountRepository(DB)
 
-	if err := accountRepository.Find(account, id); err != nil {
+	if err := accountRepository.FindByID(account, id); err != nil {
 		logger.Errorf("failed to find account: %v", err)
 		return err
 	}
