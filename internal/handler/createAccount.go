@@ -8,6 +8,16 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// @Summary Create an account
+// @Description Create a new account
+// @Tags Accounts
+// @Accept json
+// @Produce json
+// @Param request body CreateAccountRequest true "Request body (DocumentNumber must be an 11 character long string)"
+// @Success 201 {object} CreateAccountResponse
+// @Failure 400 {object} ErrorResponse
+// @Failure 403 {object} ErrorResponse
+// @Router /accounts [post]
 func CreateAccount(ctx *gin.Context) {
 	request := CreateAccountRequest{}
 

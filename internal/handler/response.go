@@ -27,3 +27,16 @@ type ErrorResponse struct {
 	Message   string `json:"message"`
 	ErrorCode string `json:"errorCode"`
 }
+
+type CreateAccountResponse struct {
+	Message string `json:"message"`
+}
+
+type ShowAccountResponse struct {
+	AccountID      uint   `json:"account_id"`
+	DocumentNumber string `json:"document_number"`
+}
+
+type CreateTransactionResponse struct {
+	Message string `json:"message"`
+}

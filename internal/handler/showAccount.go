@@ -8,13 +8,17 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// @Summary Show an account
+// @Description Find an account by its ID
+// @Tags Accounts
+// @Accept json
+// @Produce json
+// @Param accountId path string false "Account ID"
+// @Success 200 {object} ShowAccountResponse
+// @Failure 404 {object} ErrorResponse
+// @Router /accounts/{accountId} [get]
 func ShowAccount(ctx *gin.Context) {
 	id := ctx.Param("accountId")
-
-	if id == "" {
-		sendError(ctx, http.StatusBadRequest, errParamIsRequired("id", "queryParam").Error())
-		return
-	}
 
 	account := models.Account{}
 
