@@ -9,4 +9,5 @@ func initializeRoutes(router *gin.Engine) {
 
 	router.POST("/accounts", handler.CreateAccount)
 	router.GET("/accounts/:accountId", handler.ShowAccount)
+	router.POST("/transactions", handler.CreateTransaction)
 }
