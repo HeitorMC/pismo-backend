@@ -22,7 +22,7 @@ func init() {
 func main() {
 	logger.Info("Starting migration...")
 
-	db := config.GetPostgres()
+	db := config.GetDB()
 
 	err := db.AutoMigrate(&models.Account{}, &models.OperationType{}, &models.Transaction{})
 

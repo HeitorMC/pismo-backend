@@ -27,7 +27,7 @@ func Init() error {
 	return nil
 }
 
-func GetPostgres() *gorm.DB {
+func GetDB() *gorm.DB {
 	return db
 }
 
