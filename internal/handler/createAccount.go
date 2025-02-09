@@ -27,5 +27,5 @@ func CreateAccount(ctx *gin.Context) {
 		return
 	}
 
-	sendResponse(ctx, http.StatusCreated, "account created", nil)
+	sendResponse(ctx, http.StatusCreated, "Account successfully created", nil)
 }
