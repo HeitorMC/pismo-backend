@@ -10,14 +10,9 @@ var (
 )
 
 func Init() error {
+
 	var err error
-
-	err = LoadEnvVariables()
-
-	if err != nil {
-		return err
-	}
-
+	LoadEnvVariables()
 	db, err = ConnectPostgres()
 
 	if err != nil {

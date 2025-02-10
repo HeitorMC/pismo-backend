@@ -5,26 +5,21 @@ import (
 	"github.com/HeitorMC/pismo-backend/internal/models"
 )
 
-var (
-	logger *config.Logger
-)
-
-func init() {
-	logger = config.GetLogger("main")
+func main() {
+	logger := config.GetLogger("migration")
 
 	err := config.Init()
+
 	if err != nil {
 		logger.Errorf("Error initializing config: %v", err)
 		return
 	}
-}
 
-func main() {
 	logger.Info("Starting migration...")
 
 	db := config.GetDB()
 
-	err := db.AutoMigrate(&models.Account{}, &models.OperationType{}, &models.Transaction{})
+	err = db.AutoMigrate(&models.Account{}, &models.OperationType{}, &models.Transaction{})
 
 	if err != nil {
 		logger.Errorf("Migration failed: %v", err)

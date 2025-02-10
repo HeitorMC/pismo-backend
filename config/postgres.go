@@ -11,6 +11,7 @@ import (
 func ConnectPostgres() (*gorm.DB, error) {
 	logger := GetLogger("postgreSQL")
 	dsn := os.Getenv("DATABASE_URL")
+	logger.Info("Connecting to database")
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{TranslateError: true})
 
 	if err != nil {
