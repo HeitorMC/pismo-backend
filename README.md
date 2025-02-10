@@ -1,4 +1,4 @@
-# Pismo Backend Challenge
+# Transaction App
 
 This is a simple API to create accounts and transactions using Go, Gin, and PostgreSQL.
 
